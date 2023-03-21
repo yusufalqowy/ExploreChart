@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "ExploreChart",
-    "slug": "ExploreChart",
+    "slug": "eksplorasi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,22 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "id.astra.explorechart"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "da45197b-29ae-4198-9802-f3be59cbb517"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/da45197b-29ae-4198-9802-f3be59cbb517"
     }
   }
 }
