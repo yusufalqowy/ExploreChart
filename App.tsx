@@ -5,11 +5,12 @@ import AccordionView from './components/AccordionView';
 import MyWebView from './components/MyWebView';
 import RadioTag from './components/RadioTag';
 import { useState } from 'react';
+import AutoHeightWebView from 'react-native-autoheight-webview';
 
 export default function App() {
   const [filterSalesTarget, setFilterSalesTarget] = useState("CV");
-  const cvChartUrl = 'https://apps-stg.isuzu.astra.co.id:8082/dashboard/salestargetdeliveredunit/cv/a1a0f0c1-552e-4edb-be02-ea79645555e6';
-  const lcvChartUrl = 'https://apps-stg.isuzu.astra.co.id:8082/dashboard/salestargetdeliveredunit/lcv/293218b4-6e20-4d51-88f5-3fd25d38e802';
+  const cvChartUrl = 'https://www.chartjs.org/samples/2.6.0/scales/gridlines-display.html';
+  const lcvChartUrl = 'https://www.chartjs.org/samples/2.6.0/charts/pie.html';
 
 
   return (
@@ -17,8 +18,7 @@ export default function App() {
       <StatusBar style="light" />
       <ScrollView overScrollMode='never'>
       <Text style={{fontSize:21, fontWeight:'bold', margin:8}}>Sample WebView</Text>
-      <AccordionView title='Sales Target & Delivery Unit By Model'>
-        <View style={{flexDirection:'row'}}>
+      <View style={{flexDirection:'row'}}>
                         <RadioTag
                             label="CV"
                             condition={filterSalesTarget === 'CV'}
@@ -31,42 +31,31 @@ export default function App() {
                         />
           </View>
           {filterSalesTarget === 'CV' ?
-            <MyWebView
+            <AutoHeightWebView
+            scalesPageToFit={true}
             source={{
               uri: cvChartUrl,
             }}
             />
             :
-            <MyWebView
+            <AutoHeightWebView
+            scalesPageToFit={true}
             source={{
               uri: lcvChartUrl,
             }}
             />
           }
-        
-      </AccordionView>
-      <AccordionView title='Ringkasan Aktivitas'>
-        <MyWebView
-            source={{
-              uri: 'https://apps-stg.isuzu.astra.co.id:8082/dashboard/home/summaryactivity/bed9b7cf-47a7-485a-b112-cf905cfd7122',
-            }}
-          />
-      </AccordionView>
+      <AutoHeightWebView
+      scalesPageToFit={true}
+      source={{
+        uri: 'https://www.chartjs.org/samples/2.6.0/charts/bar/horizontal.html',
+      }}/>
 
-      <AccordionView title='Ringkasan Alasan Lead Hilang'>
-        <MyWebView
-            source={{
-              uri: 'https://apps-stg.isuzu.astra.co.id:8082/dashboard/droppedlead/3249cbe8-6642-43d8-a577-aeda2d00c715',
-            }}
-          />
-      </AccordionView>
-      <AccordionView title='Test Loading'>
-        <MyWebView
-            source={{
-              uri: 'https://www.speedtest.net',
-            }}
-          />
-      </AccordionView>
+      <AutoHeightWebView
+      scalesPageToFit={true}
+      source={{
+        uri: 'https://www.chartjs.org/samples/2.6.0/charts/bar/horizontal.html',
+      }}/>
       </ScrollView>
     </View>
   );
