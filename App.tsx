@@ -32,27 +32,55 @@ export default function App() {
           </View>
           {filterSalesTarget === 'CV' ?
             <AutoHeightWebView
+            originWhitelist={['*']}
+            javaScriptEnabled={true}
+            setBuiltInZoomControls={false}
+            setDisplayZoomControls={false}
+            scrollEnabled={false}
             scalesPageToFit={true}
+            onMessage={() => {}}
+            viewportContent={'width=device-width, initial-scale=0, maximum-scale=1.0, user-scalable=no'}//To prevent user zoom
             source={{
               uri: cvChartUrl,
             }}
             />
             :
             <AutoHeightWebView
+            originWhitelist={['*']}
+            javaScriptEnabled={true}
+            setBuiltInZoomControls={false}
+            setDisplayZoomControls={false}
+            scrollEnabled={false}
             scalesPageToFit={true}
+            onMessage={() => {}}
+            viewportContent={'width=device-width, initial-scale=0, maximum-scale=1.0, user-scalable=no'}//To prevent user zoom
             source={{
               uri: lcvChartUrl,
             }}
             />
           }
       <AutoHeightWebView
+      originWhitelist={['*']}
+      javaScriptEnabled={true}
+      setBuiltInZoomControls={false}
+      setDisplayZoomControls={false}
+      scrollEnabled={false}
       scalesPageToFit={true}
+      onMessage={() => {}}
+      viewportContent={'width=device-width, initial-scale=0, maximum-scale=1.0, user-scalable=no'}//To prevent user zoom
       source={{
-        uri: 'https://www.chartjs.org/samples/2.6.0/charts/bar/horizontal.html',
+        uri: 'https://snyk.io/advisor/npm-package/expo-app-auth/example',
       }}/>
 
       <AutoHeightWebView
+      originWhitelist={['*']}
+      javaScriptEnabled={true}
+      setBuiltInZoomControls={false}
+      setDisplayZoomControls={false}
+      scrollEnabled={false}
       scalesPageToFit={true}
+      onMessage={() => {}}
+      viewportContent={'width=device-width, initial-scale=0, maximum-scale=1.0, user-scalable=no'}//To prevent user zoom
       source={{
         uri: 'https://www.chartjs.org/samples/2.6.0/charts/bar/horizontal.html',
       }}/>
